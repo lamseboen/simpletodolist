@@ -58,7 +58,7 @@ $(document).ready(function () {
                 isPenting
             })
             $("#task").val("").removeClass("is-invalid")
-            $("#kategori").val("").removeClass("is-invalid")
+            $("#kategori").val("0").removeClass("is-invalid")
             $("#tanggal").val("").removeClass("is-invalid")
             $('#penting').prop('checked', false)
             $('#collapseExample').collapse("hide")
