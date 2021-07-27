@@ -5,8 +5,9 @@ const showData = payload => {
     let template = `<div class="col-md-3" id="${payload.id}">
                         <div class="card" style="width: 18rem; background-color: ${payload.warna};">
                             <div class="card-body">
-                                <h5 class="card-title">${payload.task}</h5>
+                                <h5 class="card-title">${payload.task} (${payload.isPenting? "<span style='color:red'>Penting!</span>":""})</h5>
                                 <h6 class="card-title">${payload.tanggal}</h6>
+                                
                                 <div class="d-flex justify-content-between">
                                     <button class="btn btn-info edit" data-id="${payload.id}"><span class="text-light">&#9998;</span></button>
                                     <button class="btn btn-danger hapus" data-id="${payload.id}"><span class="text-light">&#10006;</span></button>
@@ -39,13 +40,13 @@ $(document).ready(function () {
             if (task == "") throw "task"
             if (kategori == 0) throw "kategori"
             if (kategori == 1) {
-                warna = "red"
+                warna = "#f0cc1e"
             } else if (kategori == 2) {
-                warna = "blue"
+                warna = "#9acd32"
             } else if (kategori == 3) {
-                warna = "yellow"
+                warna = "#86beda"
             } else {
-                warna = "green"
+                warna = "#e7dbd0"
             }
             if (tanggal == "") throw "tanggal"
             let id = Math.floor(100000000 + Math.random() * 900000000)
@@ -53,7 +54,8 @@ $(document).ready(function () {
                 id,
                 task,
                 warna,
-                tanggal
+                tanggal,
+                isPenting
             })
             $("#task").val("").removeClass("is-invalid")
             $("#kategori").val("").removeClass("is-invalid")
