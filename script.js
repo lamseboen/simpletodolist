@@ -55,10 +55,10 @@ $(document).ready(function () {
                 warna,
                 tanggal
             })
-            $("#task").val("")
-            $("#kategori").val("")
-            $("#tanggal").val("")
-            $('#penting').prop('checked', false);
+            $("#task").val("").removeClass("is-invalid")
+            $("#kategori").val("").removeClass("is-invalid")
+            $("#tanggal").val("").removeClass("is-invalid")
+            $('#penting').prop('checked', false)
             $('#collapseExample').collapse("hide")
         } catch (error) {
             console.log(`#${error}`)
